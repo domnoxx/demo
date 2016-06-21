@@ -10,20 +10,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.david.demo.Publicacion"
     android:id="@+id/fondo"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/txtPublica" />
+    <EditText
+        android:layout_width="287dp"
+        android:layout_height="102dp"
+        android:id="@+id/txtPublica"
+        android:layout_weight="0.31" />
 
-    <TextView
+    <ToggleButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="6.65" />
+        android:text="New ToggleButton"
+        android:id="@+id/tgbColor"
+        android:checked="false"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
