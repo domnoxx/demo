@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">demo</string>
+    <string name="color">color</string>
+    <string name="registro">publicar</string>
+    <string name="lblRating">Calificacion</string>
+    <string name="ckbRating">Guardar Calificacion</string>
+    <string name="TglColorOn">b</string>
+    <string name="TglColorOff">n</string>
+    <string name="NombreCompleto">Nombre Completo</string>
+    <string name="Comentario">Comentario</string>
+    <string name="Materia">materia</string>
 </resources>
