@@ -11,7 +11,8 @@
     android:background="@android:color/white"
     android:id="@+id/Pantalla"
     tools:context="com.example.david.demo.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,12 +33,12 @@
         android:text="@string/Materia"
         android:id="@+id/lblMateria" />
 
-    <EditText
+    <AutoCompleteTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtMateria"
-        android:layout_gravity="center_horizontal"
-        android:inputType="text" />
+        android:text="New AutoCompleteTextView"
+        android:id="@+id/atxtMateria"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,13 +64,12 @@
         android:text="@string/Comentario"
         android:id="@+id/lblcomentario" />
 
-    <AutoCompleteTextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/aTxtComentario"
-        android:layout_gravity="center_horizontal"
-        android:inputType="textAutoComplete" />
+        android:id="@+id/txtComentario"
+        android:inputType="text"
+        android:layout_weight="0.75" />
 
     <ToggleButton
         android:layout_width="48dp"
