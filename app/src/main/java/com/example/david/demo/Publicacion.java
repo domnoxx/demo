@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class Publicacion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_publicacion);
         fondo=(LinearLayout) findViewById(R.id.fondo);
 
@@ -41,16 +43,16 @@ public class Publicacion extends AppCompatActivity {
 
     private void publicacion(String nombre, String materia, String calificacion, String color, String mostrar) {
         Toast.makeText(Publicacion.this, nombre.toString(),
-                Toast.LENGTH_SHORT).show();
+                Toast.LENGTH_LONG).show();
     }
 
     private void setcolor(String color) {
-        if(color=="n")
+        if(color=="A")
         {
             fondo.setBackgroundColor(Color.BLUE);
 
         }else{
-            fondo.setBackgroundColor(Color.BLACK);
+            fondo.setBackgroundColor(Color.WHITE);
 
         }
     }

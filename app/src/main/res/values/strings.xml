@@ -5,7 +5,7 @@
     <string name="lblRating">Calificacion</string>
     <string name="ckbRating">Mostrar Calificacion</string>
     <string name="TglColorOn">A</string>
-    <string name="TglColorOff">n</string>
+    <string name="TglColorOff">B</string>
     <string name="NombreCompleto">Nombre Completo</string>
     <string name="Comentario">Comentario</string>
     <string name="Materia">materia</string>

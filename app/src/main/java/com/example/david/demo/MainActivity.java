@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,13 +28,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         txtNombre = (EditText) findViewById(R.id.txtNombre);
         txtMateria= (EditText)findViewById(R.id.txtMateria);
         atxtComentario= (AutoCompleteTextView) findViewById(R.id.aTxtComentario);
         calificacion = (RatingBar) findViewById(R.id.ratingBar);
         ckbMostrar=(CheckBox) findViewById(R.id.ckbRating);
-        fondo=(LinearLayout)findViewById(R.id.fondo1);
+        fondo=(LinearLayout)findViewById(R.id.Pantalla);
         color=(ToggleButton)findViewById(R.id.tgbColor);
         color.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                    fondo.setBackgroundColor(Color.BLUE);
                 } else {
                     // The toggle is disabled
-                    fondo.setBackgroundColor(Color.BLUE);
+                    fondo.setBackgroundColor(Color.WHITE);
                 }
             }
         });
