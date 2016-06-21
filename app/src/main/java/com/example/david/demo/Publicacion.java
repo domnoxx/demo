@@ -53,14 +53,14 @@ public class Publicacion extends AppCompatActivity {
 
     }
 
-    private void publicacion(String nombre, String materia, String calificacion, String color, String mostrar, TextView pub) {
+    public void publicacion(String nombre, String materia, String calificacion, String color, String mostrar, TextView pub) {
         System.out.print(color);
-        Pub.setText("Alumno: " + nombre + " de la materia" + materia + " obtuvo " + calificacion+" de calificacion");
+        Pub.setText("Alumno: " + nombre + " de la materia" +   " obtuvo " + calificacion+" de calificacion");
 
 
     }
 
-    private void setcolor(String color) {
+    public void setcolor(String color) {
         if (color == "A") {
             fondo.setBackgroundColor(Color.BLUE);
 

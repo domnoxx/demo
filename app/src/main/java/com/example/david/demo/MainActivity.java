@@ -2,6 +2,7 @@ package com.example.david.demo;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.ToggleButton;
+
+import static java.lang.System.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         ckbMostrar=(CheckBox) findViewById(R.id.ckbRating);
         fondo=(LinearLayout)findViewById(R.id.Pantalla);
         color=(ToggleButton)findViewById(R.id.tgbColor);
+        txtComentario=(EditText)findViewById(R.id.txtComentario);
         color.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -68,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
     public void publicar(View v) {
         Intent demo = new Intent(this, Publicacion.class);
         demo.putExtra("nombre", txtNombre.getText().toString());
-        demo.putExtra("Materia", atxtMateria.getText().toString());
-        demo.putExtra("Comentario", txtComentario.getText());
+        //out.print(atxtMateria.toString());
+        demo.putExtra("Materia",String.valueOf(atxtMateria.getText().toString()));
+        demo.putExtra("Comentario", txtComentario.getText().toString());
         demo.putExtra("Calificacion",String.valueOf(calificacion.getRating()));
 
         demo.putExtra("Color",color.getText());
