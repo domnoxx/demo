@@ -1,13 +1,16 @@
 package com.example.david.demo;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.ToggleButton;
 
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ToggleButton color;
     private CheckBox ckbMostrar;
     private Button btnEnviar;
-
+    private LinearLayout fondo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +33,19 @@ public class MainActivity extends AppCompatActivity {
         atxtComentario= (AutoCompleteTextView) findViewById(R.id.aTxtComentario);
         calificacion = (RatingBar) findViewById(R.id.ratingBar);
         ckbMostrar=(CheckBox) findViewById(R.id.ckbRating);
+        fondo=(LinearLayout)findViewById(R.id.fondo1);
         color=(ToggleButton)findViewById(R.id.tgbColor);
+        color.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                   fondo.setBackgroundColor(Color.BLUE);
+                } else {
+                    // The toggle is disabled
+                    fondo.setBackgroundColor(Color.BLUE);
+                }
+            }
+        });
     }
 
 
@@ -40,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         demo.putExtra("Materia", txtMateria.getText().toString());
         demo.putExtra("Comentario", atxtComentario.getText().toString());
         demo.putExtra("Calificacion",String.valueOf(calificacion.getRating()));
+
         demo.putExtra("Color",color.getText());
         demo.putExtra("mostrar", ckbMostrar.getText().toString());
         startActivity(demo);
